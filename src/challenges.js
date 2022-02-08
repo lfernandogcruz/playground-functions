@@ -32,11 +32,11 @@ function splitSentence(originalString) {
 
 // Desafio 4
 function concatName(arrayInput) {
-  let reverseEdges = [arrayInput[arrayInput.length-1] , arrayInput[0]];
+  let reverseEdges = arrayInput[arrayInput.length-1] + ", " + arrayInput[0];
   return reverseEdges;
 };
 // test
-//console.log(concatName(['captain', 'my', 'captain']));
+console.log(concatName(['captain', 'my', 'captain']));
 
 
 // Desafio 5
