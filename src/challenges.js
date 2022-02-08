@@ -14,7 +14,7 @@ function compareTrue(value1,value2) {
 function calcArea(base,height) {
   let triangleArea = (base*height)/2;
   return triangleArea;
-}
+};
 // test
 //console.log(calcArea(2,5));
 
@@ -23,7 +23,7 @@ function calcArea(base,height) {
 function splitSentence(originalString) {
   let brokenString = originalString.split(" ");
   return brokenString;
-}
+};
 // test
 // console.log(splitSentence('go Trybe iufiuug fiaehfi faejibfiae ifaeif iafaufhoaeb iajggfoieaj uhewfbv grehe'));
 // link no StackOverflow consultado:
@@ -31,9 +31,13 @@ function splitSentence(originalString) {
 
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
-}
+function concatName(arrayInput) {
+  let reverseEdges = [arrayInput[arrayInput.length-1] , arrayInput[0]];
+  return reverseEdges;
+};
+// test
+//console.log(concatName(['captain', 'my', 'captain']));
+
 
 // Desafio 5
 function footballPoints() {
