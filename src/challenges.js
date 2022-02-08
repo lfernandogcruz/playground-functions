@@ -6,6 +6,7 @@ function compareTrue(value1,value2) {
     return false;
   };
 };
+// test
 //console.log(compareTrue(false,false));
 
 
@@ -14,13 +15,20 @@ function calcArea(base,height) {
   let triangleArea = (base*height)/2;
   return triangleArea;
 }
+// test
 //console.log(calcArea(2,5));
 
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(originalString) {
+  let brokenString = originalString.split(" ");
+  return brokenString;
 }
+// test
+// console.log(splitSentence('go Trybe iufiuug fiaehfi faejibfiae ifaeif iafaufhoaeb iajggfoieaj uhewfbv grehe'));
+// link no StackOverflow consultado:
+// https://stackoverflow.com/questions/18473326/javascript-break-sentence-by-words
+
 
 // Desafio 4
 function concatName() {
