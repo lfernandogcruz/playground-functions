@@ -1,6 +1,6 @@
 // Desafio 1
-function compareTrue(value1,value2) {
-  if (value1 === true && value2 === true){
+function compareTrue(value1, value2) {
+  if (value1 === true && value2 === true) {
     return true;
   } else {
     return false;
@@ -88,7 +88,7 @@ function catAndMouse(mouse, cat1, cat2) {
     return 'cat2';
   } else {
     return 'os gatos trombam e o rato foge';
-  }
+  };
 };
 
 // teste
@@ -96,9 +96,25 @@ function catAndMouse(mouse, cat1, cat2) {
 
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
-}
+function fizzBuzz(arrayNumbers) {
+  for (let i = 0 ; i < arrayNumbers.length ; i += 1) {
+    if (arrayNumbers[i] % 5 == 0 && arrayNumbers[i] % 3 == 0 ) {
+      arrayNumbers.splice( i , 1 , 'fizzBuzz');
+    } else if (arrayNumbers[i] % 5 == 0 ) {
+      arrayNumbers.splice( i , 1 , 'buzz');
+    } else if (arrayNumbers[i] % 3 == 0 ) {
+      arrayNumbers.splice( i , 1 , 'fizz');
+    } else {
+      arrayNumbers.splice( i , 1 , 'bug!');
+    };
+  };
+  return arrayNumbers;
+};
+//teste
+//console.log(fizzBuzz([2, 15, 7, 9, 45]));
+// link ref .splice() consultado:
+//https://ricardo-reis.medium.com/splice-969723f47d26#:~:text=Substituindo%20elementos%20usando%20o%20splice,existentes%20em%20um%20array%20simultaneamente.
+
 
 // Desafio 9
 function encode() {
