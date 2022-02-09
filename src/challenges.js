@@ -11,8 +11,8 @@ function compareTrue(value1, value2) {
 
 
 // Desafio 2
-function calcArea(base,height) {
-  let triangleArea = (base*height)/2;
+function calcArea(base, height) {
+  let triangleArea = (base * height) / 2;
   return triangleArea;
 };
 // test
@@ -32,7 +32,7 @@ function splitSentence(originalString) {
 
 // Desafio 4
 function concatName(arrayInput) {
-  let reverseEdges = arrayInput[arrayInput.length-1] + ", " + arrayInput[0];
+  let reverseEdges = arrayInput[arrayInput.length - 1] + ", " + arrayInput[0];
   return reverseEdges;
 };
 // test
@@ -40,8 +40,8 @@ function concatName(arrayInput) {
 
 
 // Desafio 5
-function footballPoints(wins,ties) {
-  let points = (wins*3)+ties;
+function footballPoints(wins, ties) {
+  let points = (wins * 3) + ties;
   return points
 };
 // test
@@ -51,15 +51,15 @@ function footballPoints(wins,ties) {
 // Desafio 6
 function highestCount(numbers) {
   let bigBoyPants = numbers[0];
-  for (let i = 0; i<numbers.length ; i +=1) {
+  for (let i = 0; i < numbers.length; i += 1) {
     if (numbers[i] > bigBoyPants) {
       bigBoyPants = numbers[i];
     };
   };
-  let counter =0;
-  for (let j = 0; j < numbers.length; j+=1) {
+  let counter = 0;
+  for (let j = 0; j < numbers.length; j += 1) {
     if (bigBoyPants == numbers[j]) {
-      counter +=1;
+      counter += 1;
     };
   };
   return counter;
@@ -72,15 +72,15 @@ function highestCount(numbers) {
 function catAndMouse(mouse, cat1, cat2) {
   let distCat1 = 0;
   let distCat2 = 0;
-  if (cat1 > mouse){
-    distCat1 = cat1-mouse;
+  if (cat1 > mouse) {
+    distCat1 = cat1 - mouse;
   } else {
-    distCat1 = mouse-cat1;
+    distCat1 = mouse - cat1;
   };
-  if (cat2 > mouse){
-    distCat2 = cat2-mouse;
+  if (cat2 > mouse) {
+    distCat2 = cat2 - mouse;
   } else {
-    distCat2 = mouse-cat2;
+    distCat2 = mouse - cat2;
   };
   if (distCat1 < distCat2) {
     return 'cat1';
@@ -97,15 +97,15 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(arrayNumbers) {
-  for (let i = 0 ; i < arrayNumbers.length ; i += 1) {
-    if (arrayNumbers[i] % 5 == 0 && arrayNumbers[i] % 3 == 0 ) {
-      arrayNumbers.splice( i , 1 , 'fizzBuzz');
-    } else if (arrayNumbers[i] % 5 == 0 ) {
-      arrayNumbers.splice( i , 1 , 'buzz');
-    } else if (arrayNumbers[i] % 3 == 0 ) {
-      arrayNumbers.splice( i , 1 , 'fizz');
+  for (let i = 0; i < arrayNumbers.length; i += 1) {
+    if (arrayNumbers[i] % 5 == 0 && arrayNumbers[i] % 3 == 0) {
+      arrayNumbers.splice(i, 1, 'fizzBuzz');
+    } else if (arrayNumbers[i] % 5 == 0) {
+      arrayNumbers.splice(i, 1, 'buzz');
+    } else if (arrayNumbers[i] % 3 == 0) {
+      arrayNumbers.splice(i, 1, 'fizz');
     } else {
-      arrayNumbers.splice( i , 1 , 'bug!');
+      arrayNumbers.splice(i, 1, 'bug!');
     };
   };
   return arrayNumbers;
@@ -117,12 +117,34 @@ function fizzBuzz(arrayNumbers) {
 
 
 // Desafio 9
-function encode() {
-  // seu código aqui
-}
-function decode() {
-  // seu código aqui
-}
+function encode(inputString) {
+  for (let j = 0; j < inputString.length; j += 1) {
+    inputString = inputString.replace('a', 1);
+    inputString = inputString.replace('e', 2);
+    inputString = inputString.replace('i', 3);
+    inputString = inputString.replace('o', 4);
+    inputString = inputString.replace('u', 5);
+  };
+  return inputString;
+};
+function decode(inputString) {
+  for (let k = 0; k < inputString.length; k += 1) {
+    inputString = inputString.replace(1, 'a');
+    inputString = inputString.replace(2, 'e');
+    inputString = inputString.replace(3, 'i');
+    inputString = inputString.replace(4, 'o');
+    inputString = inputString.replace(5, 'u');
+  };
+  return inputString;
+};
+// teste
+// console.log(encode('hi there aeiou 12345'));
+// console.log(encode('h3 th2r2 12345 aeiou'));
+// console.log(decode('hi there aeiou 12345'));
+// console.log(decode('h3 th2r2 12345 aeiou'));
+// link ref .replace() consultado:
+//https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
+
 
 // Desafio 10
 function techList() {
