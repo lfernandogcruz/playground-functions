@@ -147,9 +147,37 @@ function decode(inputString) {
 
 
 // Desafio 10
-function techList() {
-  // seu código aqui
-}
+function techList(inputTech,inputName) {
+  if ( inputTech.length < 1 ) {
+    return 'Vazio!';
+  } else {
+    let objectsArray = [];
+    for (let i in inputTech) {
+      objectsArray.push({tech: inputTech[i],name: inputName});
+    };
+    return objectsArray.sort( (a, b) => {
+      if (a.tech > b.tech ){
+        return 1;
+      } else if (a.tech < b.tech) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  };
+};
+//  teste
+// console.log('final', techList(['Bigode','Zipper', 'Abracadabra', 'Sopa'],'Luis'));
+// .
+// referencias consultadas:
+// - documentaçao:
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+// - ex de aplicacao:
+// https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
+// coment:
+// testei diversas formas de aplicar a 'arrow function' pra reduzir a sub funcao de ordenar, mas sem sucesso (ainda! Vou pegar a manha disso logo logo).
+// voltei ao pattern da documentacao que atribui momentaneamente um "valor" aos "objetos comparados" de acordo com a relacao numerica de seus caracteres e, entao, os ordena na funcao superior, que é o '.sort()'.
+
 
 module.exports = {
   calcArea,
