@@ -30,11 +30,23 @@ function generatePhoneNumber(inputPhoneNumber) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  // lado1 < lado2 + lado3
-  // && 
-  // lado1 > Math.abs(lado2 - lado3)
-  // return true/false
-
+let side1 = false;
+let side2 = false;
+let side3 = false;
+if (Math.abs(lineB - lineC) < lineA && lineA < lineB + lineC) {
+  side1 = true
+};
+if (Math.abs(lineA - lineC) < lineB && lineB < lineA + lineC) {
+  side2 = true;
+};
+if (Math.abs(lineA - lineB) < lineC && lineC < lineA + lineB) {
+  side3 = true;
+};
+//check
+if (side1 === true && side2 === true && side3 === true ) {
+  return true;
+};
+return false;
 };
 
 // Desafio 13
