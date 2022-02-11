@@ -55,7 +55,7 @@ function hydrate(inputOrder) {
   let orderQuant = inputOrder.replace(/[^0-9]+/g, '');
   console.log(orderQuant);
   let sum = 0;
-  for (let i = 0; i < orderQuant.length ; i += 1) {
+  for (let i = 0; i < orderQuant.length; i += 1) {
     sum += orderQuant[i] * 1;
     console.log('loop', i, ':', sum);
   }
