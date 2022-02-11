@@ -1,65 +1,21 @@
 // Desafio 11
 function generatePhoneNumber(inputPhoneNumber) {
-  let saida ='';
-  
-  // inputPhoneNumber != 11 -> 'Array com tamanho incorreto.'
-  function validateLength () {
-    if (inputPhoneNumber.length == 11) {
-      return true;
-    } else {
-      return false;
-    };
+  if (inputPhoneNumber.length != 11) {
+    return 'Array com tamanho incorreto.';
   };
-  
-  // se numero x < 0 || > 9, -> 'não é possível gerar um número de telefone com esses valores'
-  function validateAlgarisms () {
-    for (let n1 in inputPhoneNumber) {
-      if (inputPhoneNumber[n1] < 0 || inputPhoneNumber[n1] > 9) {
-       return false;
-      } else {
-        return true;
-      };
-  };
-
-  // se x repetir >= 3 -> 'não é possível gerar um número de telefone com esses valores'
-  function validateRepetition () {
+  for (let i = 0; i < inputPhoneNumber.length ; i += 1) {
     let repeatCounter = 0;
-    for (let i = 0 ; i < inputPhoneNumber.length-1 ; i +=1 ) {
-    //comparador
-      for (let j = 1 ; j < inputPhoneNumber.length ; j +=1 ){
-      //comparado  
-        if (inputPhoneNumber[i] === inputPhoneNumber[j]) {
-          repeatCounter += 1;
-        };
+    for (let j = 0; j < inputPhoneNumber.length; j += 1) {
+      if (inputPhoneNumber[i] === inputPhoneNumber[j]) {
+        repeatCounter += 1;
+      };
+      if (repeatCounter > 2 || inputPhoneNumber[i] < 0 || inputPhoneNumber[i] > 9) {
+        return 'não é possível gerar um número de telefone com esses valores';
       };
     };
-    if (repeatCounter < 3) {
-      return true;
-    } else {
-      return false;
-    };
   };
-  
-  //criar subStrings se  validateLength() validateAlgarisms() validateRepetition();
-  //'(' + inputPhoneNumber.substring(0,2) + ') ' + inputPhoneNumber.substring(2,7) + ' - ' + inputPhoneNumber.substring(7);
-validateLength();
-if (validateLength() === false) {
-  saida = 'Array com tamanho incorreto.';
-} else {
-  validateAlgarisms();
-  if (validateAlgarisms() === false) {
-    saida = 'não é possível gerar um número de telefone com esses valores';
-  } else {
-    validateRepetition();
-    if (validateRepetition === false) {
-      saida = 'não é possível gerar um número de telefone com esses valores';
-    };
-  };
-  // saida = '(' + inputPhoneNumber.slice(0,2) + ') ' + inputPhoneNumber.slice(2,5) + ' - ' + inputPhoneNumber.slice(7);
-  saida = '(' + inputPhoneNumber.substring(0,2) + ') ' + inputPhoneNumber.substring(2,7) + ' - ' + inputPhoneNumber.substring(7);
-  // saida = '(' + inputPhoneNumber.substr(0,2) + ') ' + inputPhoneNumber.substr(2,5) + ' - ' + inputPhoneNumber.substr(7,4);
-};
-  return saida;
+  let stringNumber = inputPhoneNumber.join('');
+  return '(' + stringNumber.slice(0, 2) + ') ' + stringNumber.slice(2, 7) + '-' + stringNumber.slice(7);
 };
 //teste
 // console.log(generatePhoneNumber( [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
@@ -67,12 +23,18 @@ if (validateLength() === false) {
 // ref sobre .substring() :
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 //.
-//pela falha no 'npm test' testei com '.substring()', '.substr()' e com '.slice()' mas o erro na ultima lina do 'module.exports()' persistiu.
+// ref sobre .join():
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+
 
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  // lado1 < lado2 + lado3
+  // && 
+  // lado1 > Math.abs(lado2 - lado3)
+  // return true/false
+
 };
 
 // Desafio 13
