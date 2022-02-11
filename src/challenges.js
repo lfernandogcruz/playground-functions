@@ -19,7 +19,7 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(originalString) {
-  let brokenString = originalString.split(" ");
+  let brokenString = originalString.split(' ');
   return brokenString;
 }
 // test
@@ -29,7 +29,7 @@ function splitSentence(originalString) {
 
 // Desafio 4
 function concatName(arrayInput) {
-  let reverseEdges = arrayInput[arrayInput.length - 1] + ", " + arrayInput[0];
+  let reverseEdges = arrayInput[arrayInput.length - 1] + ', ' + arrayInput[0];
   return reverseEdges;
 }
 // test
@@ -53,7 +53,7 @@ function highestCount(numbers) {
   }
   let counter = 0;
   for (let j = 0; j < numbers.length; j += 1) {
-    if (bigBoyPants == numbers[j]) {
+    if (bigBoyPants === numbers[j]) {
       counter += 1;
     }
   }
@@ -90,11 +90,11 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(arrayNumbers) {
   for (let i = 0; i < arrayNumbers.length; i += 1) {
-    if (arrayNumbers[i] % 5 == 0 && arrayNumbers[i] % 3 == 0) {
+    if (arrayNumbers[i] % 5 === 0 && arrayNumbers[i] % 3 === 0) {
       arrayNumbers.splice(i, 1, 'fizzBuzz');
-    } else if (arrayNumbers[i] % 5 == 0) {
+    } else if (arrayNumbers[i] % 5 === 0) {
       arrayNumbers.splice(i, 1, 'buzz');
-    } else if (arrayNumbers[i] % 3 == 0) {
+    } else if (arrayNumbers[i] % 3 === 0) {
       arrayNumbers.splice(i, 1, 'fizz');
     } else {
       arrayNumbers.splice(i, 1, 'bug!');
@@ -137,16 +137,16 @@ function decode(inputString) {
 // https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
 
 // Desafio 10
-function techList(inputTech,inputName) {
-  if ( inputTech.length < 1 ) {
+function techList(inputTech, inputName) {
+  if (inputTech.length < 1) {
     return 'Vazio!';
   } else {
     let objectsArray = [];
     for (let i in inputTech) {
-      objectsArray.push({tech: inputTech[i],name: inputName});
+      objectsArray.push({ tech: inputTech[i], name: inputName });
     }
-    return objectsArray.sort( (a, b) => {
-      if (a.tech > b.tech ){
+    return objectsArray.sort((a, b) => {
+      if (a.tech > b.tech) {
         return 1;
       } else if (a.tech < b.tech) {
         return -1;
@@ -183,4 +183,4 @@ module.exports = {
   highestCount,
   splitSentence,
   techList,
-}
+};
