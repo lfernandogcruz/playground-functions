@@ -9,13 +9,24 @@ function generatePhoneNumber(inputPhoneNumber) {
       if (inputPhoneNumber[i] === inputPhoneNumber[j]) {
         repeatCounter += 1;
       }
-      if (repeatCounter > 2 || inputPhoneNumber[i] < 0 || inputPhoneNumber[i] > 9) {
+      if (
+        repeatCounter > 2 ||
+        inputPhoneNumber[i] < 0 ||
+        inputPhoneNumber[i] > 9
+      ) {
         return 'não é possível gerar um número de telefone com esses valores';
       }
     }
   }
   let stringNumber = inputPhoneNumber.join('');
-  return '(' + stringNumber.slice(0, 2) + ') ' + stringNumber.slice(2, 7) + '-' + stringNumber.slice(7);
+  return (
+    '(' +
+    stringNumber.slice(0, 2) +
+    ') ' +
+    stringNumber.slice(2, 7) +
+    '-' +
+    stringNumber.slice(7)
+  );
 }
 // teste
 // console.log(generatePhoneNumber( [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
@@ -53,11 +64,9 @@ function triangleCheck(lineA, lineB, lineC) {
 // Desafio 13
 function hydrate(inputOrder) {
   let orderQuant = inputOrder.replace(/[^0-9]+/g, '');
-  console.log(orderQuant);
   let sum = 0;
   for (let i = 0; i < orderQuant.length; i += 1) {
     sum += orderQuant[i] * 1;
-    console.log('loop', i, ':', sum);
   }
   if (sum === 1) {
     return sum + ' copo de água';
